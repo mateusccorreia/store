@@ -3,7 +3,7 @@ import logo from '../assets/americanas.png'
 
 export default function Header() {
     return(
-        <header className="header-left">
+        <header>
             <div className="header-left">
                 <img src={logo} alt="" height={30}/>
                 <div>
