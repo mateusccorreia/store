@@ -1,0 +1,25 @@
+/* .btn-success {
+    position: relative;
+    bottom: 0;
+    background-color: green;
+    height: 50px;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.btn-success:hover {
+    cursor: pointer;
+} */
+
+.btn {
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter:saturate(200%);
+}
