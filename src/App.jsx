@@ -3,7 +3,9 @@ import GlobalStyle from "./globalStyles";
 import { Card } from "./components/Card";
 import { instance } from "./services/api";
 import { useEffect, useState } from "react";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
+import './styles/App.css'
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -11,15 +13,13 @@ function App() {
 
   async function fetchGetProducts() {
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const response = await instance.get("/products");
       setProducts(response.data);
       console.log(response.data);
-    }
-    catch {      
-    }
-    finally {
-      setIsLoading(false)
+    } catch {
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -31,16 +31,21 @@ function App() {
     <>
       <GlobalStyle>
         <Header />
-          {isLoading ? <ReactLoading type={"bars"} color={'red'}/> :
+        <div className="mainDiv">
+          {isLoading ? (
+            <ReactLoading type={"bars"} color={"red"} />
+          ) : (
             products.map((product, id) => (
-            <Card
-              title={product.title}
-              price={product.price}
-              description={product.description}
-              key={id}
-              image={product.images[0]}
-            />
-          ))}
+              <Card
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                key={id}
+                image={product.images[0]}
+              />
+            ))
+          )}
+        </div>
       </GlobalStyle>
     </>
   );
