@@ -40,7 +40,7 @@ function App() {
                 description={product.description}
                 key={id}
                 image={product.images[0]}
-              />
+              />              
             ))
           )}
         </div>

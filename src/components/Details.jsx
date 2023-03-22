@@ -3,17 +3,17 @@ import { getProduct } from "../services/api"
 
 export async function loaderProduct ({ params }) {
     const product = await getProduct(params.id)
-    return {product}
+    // return {product}
 }
 
 export default function Details() {
    const {product} = useLoaderData
     return(
-        <div>
-            <img src="" alt="" />
-            <span>{product}</span>
-            <span></span>
-            <p></p>
+        <div>            
+            {/* <img src={product.images} />
+            <span>{product.title}</span>
+            <span>{product.price}</span>
+            <p>{product.description}</p> */}
         </div>
     )
 }

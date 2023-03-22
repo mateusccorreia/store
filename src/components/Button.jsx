@@ -20,6 +20,11 @@ const styleDefault = {
    backgroundColor: 'gray',
 }
 
+const styleInfo = {
+   color: 'white',
+   backgroundColor: 'blue'   
+}
+
 function styleBtn (status) {
    if(status ==='success') {
       return styleSucess
@@ -27,6 +32,8 @@ function styleBtn (status) {
       return styleWarning       
    } else if (status ==='danger') {
       return styleDanger
+   } else if (status === 'info') {
+      return styleInfo
    } else {
       return styleDefault 
    } 
