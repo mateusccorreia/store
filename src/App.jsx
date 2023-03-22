@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import './styles/App.css'
 
-
 function App() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +15,6 @@ function App() {
       setIsLoading(true);
       const response = await instance.get("/products");
       setProducts(response.data);
-      console.log(response.data);
     } catch {
     } finally {
       setIsLoading(false);
@@ -27,13 +25,13 @@ function App() {
     fetchGetProducts();
   }, []);
 
-  return (
+  return ( 
     <>
       <GlobalStyle>
         <Header />
         <div className="mainDiv">
           {isLoading ? (
-            <ReactLoading type={"bars"} color={"red"} />
+            <ReactLoading type={"bars"} color={"red"} className="loading"/>
           ) : (
             products.map((product, id) => (
               <Card
