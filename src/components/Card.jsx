@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 export function Card(props) {
   return (
     <>
-      <Link to={"256"}>
-        <Button name="Ir para o produto" status="info" />
-      </Link>
-      <div className="container">
+      <div className="containerCard">
         <img src={props.image} alt="" className="imgCard" />
         <span>{props.title}</span>
         <span>{props.price}</span>
         <p>{props.description}</p>
+        <Link to={`products/${props.id}`}>
+        <Button name="Ir para o produto" status="info" />
+      </Link>
       </div>
     </>
   );

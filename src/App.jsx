@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import GlobalStyle from "./globalStyles";
 import { Card } from "./components/Card";
-import { instance } from "./services/api";
+import { getAllProducts } from "./services/api";
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import './styles/App.css'
@@ -13,9 +13,10 @@ function App() {
   async function fetchGetProducts() {
     try {
       setIsLoading(true);
-      const response = await instance.get("/products");
-      setProducts(response.data);
-    } catch {
+      const response = await getAllProducts()
+      setProducts(response);
+    } catch (error) {
+      console.log(error)
     } finally {
       setIsLoading(false);
     }
@@ -40,6 +41,7 @@ function App() {
                 description={product.description}
                 key={id}
                 image={product.images[0]}
+                id={product.id}
               />              
             ))
           )}

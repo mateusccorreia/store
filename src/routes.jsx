@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import { loaderProduct } from "./components/Details";
+import App from "./App";
+import { Card } from "./components/Card";
+import Details, { loaderProduct } from "./components/Details";
 
 export const router = createBrowserRouter([
   {
