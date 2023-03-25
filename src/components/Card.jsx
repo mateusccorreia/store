@@ -13,6 +13,9 @@ export function Card(props) {
         <Link to={`products/${props.id}`}>
         <Button name="Ir para o produto" status="info" />
       </Link>
+      <Link to={``}>
+        <Button name="Adicionar ao carrinho" status="success" />
+      </Link>
       </div>
     </>
   );

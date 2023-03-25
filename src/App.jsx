@@ -5,6 +5,7 @@ import { getAllProducts } from "./services/api";
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import './styles/App.css'
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -27,9 +28,9 @@ function App() {
   }, []);
 
   return ( 
-    <>
+    <CartProvider>
       <GlobalStyle>
-        <Header />
+        <Header/>
         <div className="mainDiv">
           {isLoading ? (
             <ReactLoading type={"bars"} color={"red"} className="loading"/>
@@ -47,7 +48,7 @@ function App() {
           )}
         </div>
       </GlobalStyle>
-    </>
+    </CartProvider>
   );
 }
 

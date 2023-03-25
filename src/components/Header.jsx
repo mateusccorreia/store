@@ -2,6 +2,7 @@ import '../styles/Header.css'
 import logo from '../assets/americanas.png'
 
 export default function Header() {
+    const {setProduct} = useContext(CartContext);
     return(
         <header>
             <div className="header-left">
